@@ -8,6 +8,11 @@
 #include "ofxPubSubOsc.h"
 
 
+#define PORT 8000
+
+#define WIDTH 1000
+#define HEIGHT 1800
+
 
 
 
@@ -41,17 +46,31 @@ public:
     ofxPanel gui;
     ofEasyCam cam;
     
+    ofxLiveShader testShader;
     
+    //utils
     void setupQuadWarper();
+    void allocateFbos();
+    bool bDebug = true;
+    //--------
     
     
-    bool bDebug = false;
+
     
+    
+    //scene
+    float time = 0;
+    int state = 0;
+    //--------
+    
+    //warper
     ofxQuadWarp warper;
     ofFbo fbo;
     ofPoint points[10];
+    //-----
+  
     
-    float time;
+
     
     
     
