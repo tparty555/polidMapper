@@ -10,6 +10,25 @@ void ofApp::setup(){
     setupQuadWarper();
     
     testShader.setup("passthru.vert","test.frag");
+}
+
+
+void ofApp::setupMeshes(){
+    scaleSize = vec3(ofGetWidth(),ofGetHeight(),1.0);
+    plane.addVertex(vec3(0.0,0.0,0.0)*scaleSize);
+        plane.addVertex(vec3(1.0,0.0,0.0)*scaleSize);
+        plane.addVertex(vec3(1.0,1.0,0.0)*scaleSize);
+        plane.addVertex(vec3(0.0,1.0,0.0)*scaleSize);
+    
+    plane.addIndex(0);
+     plane.addIndex(1);
+     plane.addIndex(2);
+    
+    plane.addIndex(0);
+    plane.addIndex(2);
+    plane.addIndex(3);
+    
+    
     
     
 }
@@ -29,6 +48,9 @@ void ofApp::update(){
     fbo.end();
     
 }
+
+
+
 
 //--------------------------------------------------------------
 void ofApp::draw(){
@@ -119,34 +141,7 @@ void ofApp::keyReleased(int key){
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
-    
-}
 
-//--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
-    
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
-    
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
-    
-}
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
